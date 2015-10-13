@@ -1,15 +1,19 @@
-<form action='/new' method='POST'>
-    <div class="form-group">
-      <label for='author'>By...</label></br>
-      <input id='author' name='article[author]' type='text' placeholder="Who's writing this article?">
-    </div>
-    <div class="form-group">
-      <label for='categories'>Tags related to this article</label></br>
-      <input id='categories' name='article[categories]' type='text' placeholder="Article's categories. Seperate with commas">
-    </div>
-    <div class="form-group" rows="6">
-      <label for='body'>Contents of article</label></br>
-      <textarea rows="6" name='article[body]' placeholder='Type your article here...'></textarea>
-    </div>
-    <input type="submit">
-  </form>
+<form action='/articles' method='POST'>
+  <div class="form-group">
+    <label for='title'>Title of Article</label></br>
+    <input id='title' name='article[title]' type='text' placeholder="Title">
+  </div>
+  <div class="form-group">
+    <label for='author'>By...</label></br>
+    <input id='author' name='article[author]' type='text' placeholder="Who's writing this article?">
+  </div>
+  <div class="form-group">
+    <label for='categories'>Tags related to this article</label></br>
+    <input id='categories' name='article[categories]' type='text' placeholder="Article's categories. Seperate with commas">
+  </div>
+  <div class="form-group" rows="6">
+    <label for='body'>Contents of article</label></br>
+    <textarea rows="6" name='article[body]' placeholder='Type your article here...'></textarea>
+  </div>
+  <input type="submit">
+</form>
