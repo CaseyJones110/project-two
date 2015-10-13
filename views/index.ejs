@@ -5,7 +5,7 @@
     <li>Written by <%= article.author %></li>
     <li><%= article.categories.join(', ') %></li>
   </ul>
-  <form action="/articles/" method="post" class="delete-article">
+  <form action="/articles/<%= article._id %>?_method=DELETE" method="post" class="delete-article">
     <input type="submit" value="Delete this article">
   </form>
 <% }) %>

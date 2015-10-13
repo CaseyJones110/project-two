@@ -60,23 +60,21 @@ server.get('/articles', function (req, res) {
   });
 });
 
+server.delete('/articles/:id', function (req, res) {
+  var articleID = req.params.id;
+  Article.remove({
+    _id: articleID
+  }, function (err) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.redirect(302, '/articles');
+    }
+  });
+});
+
 mongoose.connect(MONGOURI + "/" + dbname);
 
 server.listen(PORT, function () {
-  var newArticle = new Article ({
-    title: "Testing nodedemon",
-    author: "Casey",
-    categories: ['tag', 'no tag', 'some tags'],
-    body: "This is my super awesome and informative article"
-  })
-
-  newArticle.save(function(err, article) {
-    if (err) {
-      console.log("ERROR" + err);
-    } else {
-      console.log("article save", article);
-    }
-  })
-
   console.log("Up", PORT);
 })
