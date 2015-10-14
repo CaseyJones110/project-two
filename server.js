@@ -15,7 +15,8 @@ var articleSchema = new Schema({
   title: String,
   author: String,
   categories: [String],
-  body: String
+  body: String,
+  date: { type: Date, default: Date.now }
 }, {collection: 'articles', strict: false});
 
 var Article = mongoose.model('article', articleSchema);
@@ -55,6 +56,58 @@ server.get('/articles', function (req, res) {
     } else {
       res.render('index', {
         articles: allArticles
+      });
+    }
+  });
+});
+
+server.get('/articles/:title', function (req, res) {
+  var articleTitle = req.params.title;
+  Article.findOne({
+    title: articleTitle
+  }, function (err, specificArticle) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render('show_one', {
+        title: articleTitle,
+        article: specificArticle
+      });
+    }
+  });
+});
+
+server.get('/articles/:id/edit', function (req, res) {
+  var articleID = req.params.id;
+  Article.findOne({
+    _id: articleID
+  }, function (err, specificArticle) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render('edit', {
+        article: specificArticle
+      });
+    }
+  });
+});
+
+server.patch('/articles/:id', function (req, res) {
+  console.log("Patch found");
+  var articleID = req.params.id;
+  Article.findOne({
+    _id: articleID
+  }, function (err, specificArticle) {
+    if (err) {
+      console.log(err);
+    } else {
+      specificArticle.update(req.body.article, function (errTwo, article) {
+        if (errTwo) {
+          console.log(errTwo);
+        } else {
+          res.redirect(302, '/articles');
+          console.log("updated!");
+        }
       });
     }
   });
