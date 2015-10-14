@@ -1,23 +1,30 @@
 <form action='/articles' method='POST'>
-  <div class="form-group">
+  <div class="form-group input-lg">
     <label for='title'>Title of Article</label></br>
     <input id='title' name='article[title]' type='text' placeholder="Title">
   </div>
-  <div class="form-group">
+  <div class="form-group input-lg">
     <label for='author'>By...</label></br>
     <input id='author' name='article[author]' type='text' placeholder="Who's writing this article?">
   </div>
-  <div class="form-group">
-    <label for='categories'>Tags related to this article</label></br>
-    <input id='categories' name='article[categories]' type='text' placeholder="Article's categories. Seperate with commas">
-  </div>
+  <div class="form-group input-lg">
+    <h4>Tags</h4>
+    <label for='science' class='checkbox-inline'>Science</label>
+    <input id='science' name='article[categories][]' type='checkbox' value='science'>
+    <label for='arts' class='checkbox-inline'>Arts</label>
+    <input id='arts' name='article[categories][]' type='checkbox' value='arts'>
+    <label for='society' class='checkbox-inline'>Society</label>
+    <input id='society' name='article[categories][]' type='checkbox' value='society'>
+    <label for='business' class='checkbox-inline'>Business</label>
+    <input id='business' name='article[categories][]' type='checkbox' value='business'>
+  </div></br>
   <div class="form-group" rows="6">
     <label for='body'>Contents of article</label></br>
     <textarea rows="6" name='article[body]' placeholder='Type your article here...'></textarea>
   </div>
-  <div class="form-group" rows="6">
+  <!-- <div class="form-group" rows="6">
     <label for='date'>Date</label></br>
     <input name='article[date]'>
-  </div>
+  </div> -->
   <input type="submit">
 </form>

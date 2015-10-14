@@ -1,8 +1,18 @@
 body {
+  background-color:
   text-align: center;
-  margin: 0 auto;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
 }
 
 li {
   list-style-type: none;
+}
+
+.article-content {
+  width: 33%;
+  margin: 0 auto;
 }

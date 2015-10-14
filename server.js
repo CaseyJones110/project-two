@@ -21,6 +21,8 @@ var articleSchema = new Schema({
 
 var Article = mongoose.model('article', articleSchema);
 
+module.exports = Article;
+
 server.set('views', './views');
 server.set('view engine', 'ejs');
 
@@ -72,6 +74,22 @@ server.get('/articles/:title', function (req, res) {
       res.render('show_one', {
         title: articleTitle,
         article: specificArticle
+      });
+    }
+  });
+});
+
+server.get('/categories/:categories', function (req, res) {
+  var articleCat = req.params.categories;
+  Article.find({
+    categories: articleCat
+  }, function (err, specifiedArticles) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render('show_by_cat', {
+        cat: articleCat,
+        articles: specifiedArticles
       });
     }
   });
