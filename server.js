@@ -21,8 +21,6 @@ var articleSchema = new Schema({
 
 var Article = mongoose.model('article', articleSchema);
 
-module.exports = Article;
-
 server.set('views', './views');
 server.set('view engine', 'ejs');
 

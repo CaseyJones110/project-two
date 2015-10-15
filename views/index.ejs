@@ -1,14 +1,17 @@
-<a href="/articles/new" class="new-article">Create a new article</a>
 <% articles.forEach(function (article, i) { %>
-  <ul>
-    <li><a href="/articles/<%= article.title %>"><%= article.title %></a></li>
-    <li>Written by <%= article.author %></li>
-    <li><%= article.categories.join(', ') %></li>
-    <li><%= article.date %></li>
-    <li class="article-content"><%= article.body %></li>
-  </ul>
-  <a href="/articles/<%= article._id %>/edit">edit</a>
-  <form action="/articles/<%= article._id %>?_method=DELETE" method="post" class="delete-article">
-    <input type="submit" value="Delete this article">
-  </form>
+  <div class="col-md-4 index-ul">
+    <ul>
+      <li><a href="/articles/<%= article.title %>"><%= article.title %></a></li>
+      <li>Written by <%= article.author %></li>
+      <li><%= article.categories.join(', ') %></li>
+      <li>Last updated: <%= article.date %></li>
+      <li class="article-content"><%= article.body %></li>
+      <li><a href="/articles/<%= article._id %>/edit">edit</a></li>
+      <li>
+        <form action="/articles/<%= article._id %>?_method=DELETE" method="post" class="delete-article">
+          <input type="submit" class="btn btn-default btn-sm" value="Delete this article">
+        </form>
+      </li>
+    </ul>
+  </div>
 <% }) %>

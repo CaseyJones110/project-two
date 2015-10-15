@@ -5,8 +5,38 @@
     <title>Wiki</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="/app.css">
+    <link href='https://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet' type='text/css'>
+    <nav class="navbar navbar-default">
+      <div class="nav-wrap">
+        <a href="/">
+          <img class="logo" src="http://www.boiledbeans.net/wp-content/uploads/2007/10/a4a5a0db727d718e645b845c462aed7f.jpg">
+        </a>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/articles">Archives</a></li>
+          <li><a href="/articles/new">Wrtie an Article</a></li></vr>
+          <li class="divide">|</li>
+          <!-- <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="categories/science">Science</a></li>
+              <li><a href="categories/arts">Arts</a></li>
+              <li><a href="categories/society">Society</a></li>
+              <li><a href="categories/business">Business</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+            </ul>
+          </li> -->
+          <li><a href="/categories/science">Science</a></li>
+          <li><a href="/categories/arts">Arts</a></li>
+          <li><a href="/categories/society">Society</a></li>
+          <li><a href="/categories/business">Business</a></li>
+        </ul>
+      <div>
+    </nav>
   </head>
   <body>
-    <%- body %>
+    <div class="container-fluid">
+      <%- body %>
+    </div>
   </body>
 </html>
