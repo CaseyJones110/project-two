@@ -1,11 +1,15 @@
 <style>
-
+  .article-wrap {
+    margin-top: 40px;
+  }
 </style>
-<ul>
-  <li><%= article.title %></li>
-  <li><%= article.author %></li>
-  <li><%= article.categories %></li>
-  <li>Last updated: <%= article.date %></li>
-  <li class="article-content"><%= article.body %></li>
-  <li><a href="/articles/<%= article._id %>/edit">edit</a></li>
-</ul>
+<div class="article-wrap">
+  <ul>
+    <li><%= article.title %></li>
+    <li><%= article.author %></li>
+    <li><%= article.categories %></li>
+    <li>Last updated: <%= article.date %></li>
+    <li class="article-content"><%= article.body %></li>
+    <li><a href="/articles/<%= article._id %>/edit">edit</a></li>
+  </ul>
+</div>

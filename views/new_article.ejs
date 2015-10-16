@@ -1,11 +1,20 @@
+<style>
+  form {
+    margin-top: 40px;
+  }
+
+  .input {
+    width: 40%;
+  }
+</style>
 <form action='/articles' method='POST'>
   <div class="form-group input-lg">
     <label for='title'>Title of Article</label></br>
-    <input id='title' name='article[title]' type='text' placeholder="Title">
+    <input id='title' class="input-head" name='article[title]' type='text' placeholder="Title">
   </div>
   <div class="form-group input-lg">
     <label for='author'>By...</label></br>
-    <input id='author' name='article[author]' type='text' placeholder="Who's writing this article?">
+    <input id='author' class="input-head" name='article[author]' type='text' placeholder="Who's writing this article?">
   </div>
   <div class="form-group input-lg">
     <h4>Tags</h4>
@@ -19,12 +28,8 @@
     <input id='business' name='article[categories][]' type='checkbox' value='business'>
   </div></br>
   <div class="form-group" rows="6">
-    <label for='body'>Contents of article</label></br>
-    <textarea rows="6" name='article[body]' placeholder='Type your article here...'></textarea>
+    <label for='body'></label></br>
+    <textarea rows="17" class="form-control" name='article[body]' placeholder='Type your article here...'></textarea>
   </div>
-  <!-- <div class="form-group" rows="6">
-    <label for='date'>Date</label></br>
-    <input name='article[date]'>
-  </div> -->
   <input type="submit">
 </form>

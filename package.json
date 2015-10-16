@@ -19,6 +19,7 @@
   "homepage": "https://github.com/CaseyJones110/project-two#readme",
   "dependencies": {
     "body-parser": "^1.14.1",
+    "dateformat": "^1.0.11",
     "ejs": "^2.3.4",
     "express": "^4.13.3",
     "express-ejs-layouts": "^2.0.0",

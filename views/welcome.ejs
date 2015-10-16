@@ -7,34 +7,41 @@
 
   .home-page {
     text-align: center;
-    margin: 0 auto;
+    margin: 40px auto;
+  }
+
+  blockquote {
+    width: 600px;
+    margin: 40px auto;
+  }
+
+  blockquote > footer {
+    color: black;
   }
 
   p {
-    font-size: 16px;
+    font-size: 20px;
+  }
+
+  a {
+    font-size: 20px;
   }
 </style>
 <div class="home-page">
   <h1>Welcome to Wiki</h1>
-  <p class="col-md-4">
-    Wikipedia defines a 'Wiki as "...a website which allows collaborative
-    modification of its content and structure directly from the web browser."
+  <blockquote>
+    <p>
+      A Wiki is a website which allows collaborative modification of its content
+      and structure directly from the web browser
+    </p>
+    <footer>Wikipedia</footer>
+  </blockquote>
+  <p>
+    Would you like to <a href="/articles/new">Wrtie a new article?!</a>
   </p>
-  <p class="col-md-4">
-    Would you like to <a href="/articles/new">Wrtie a new article</a>?!
-  </p>
-  <p class="col-md-4">
+  <p>
     See what articles have been written in the worlds of
     <a href="/categories/science">Science</a>, <a href="/categories/arts">Arts</a>,
     <a href="/categories/society">Society</a>, and <a href="/categories/business">Business</a>
   </p>
-  <ul>
-    <li></li>
-    <li><a href="/articles">All articles</a></li>
-  </ul>
-  <h3>See all articles about</h3>
-  <a href="/categories/science">Science</a>
-  <a href="/categories/arts">Arts</a>
-  <a href="/categories/society">Society</a>
-  <a href="/categories/business">Business</a>
 </div>

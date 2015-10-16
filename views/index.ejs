@@ -2,10 +2,17 @@
   <div class="col-md-4 index-ul">
     <ul>
       <li><a href="/articles/<%= article.title %>"><%= article.title %></a></li>
-      <li>Written by <%= article.author %></li>
-      <li><%= article.categories.join(', ') %></li>
-      <li>Last updated: <%= article.date %></li>
-      <li class="article-content"><%= article.body %></li>
+      <li>Written by <%= article.author %></li></br>
+      <li>Tags: <%= article.categories.join(' | ') %></li>
+      <li>Last updated: <%= article.date.toLocaleDateString() %><%= ' ' %><%= article.date.toLocaleTimeString() %></li></br>
+      <li class="article-content">
+        <% if (article.body.length < 250) { %>
+            <%= article.body %>
+        <% } else { %>
+            <%= article.body.slice(0, 250) %>...
+        <% } %>
+      </li>
+      </li>
       <li><a href="/articles/<%= article._id %>/edit">edit</a></li>
       <li>
         <form action="/articles/<%= article._id %>?_method=DELETE" method="post" class="delete-article">

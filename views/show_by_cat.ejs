@@ -1,3 +1,8 @@
+<style>
+  ul {
+    margin-top: 40px;
+  }
+</style>
 <% articles.forEach(function (article, i) { %>
   <ul>
     <li><a href="/articles/<%= article.title %>"><%= article.title %></a></li>
@@ -5,9 +10,11 @@
     <li><%= article.categories.join(', ') %></li>
     <li><%= article.date %></li>
     <li class="article-content"><%= article.body %></li>
+    <li><a href="/articles/<%= article._id %>/edit">edit</a></li>
+    <li>
+      <form action="/articles/<%= article._id %>?_method=DELETE" method="post" class="delete-article">
+        <input type="submit" value="Delete this article">
+      </form>
+    </li>
   </ul>
-  <a href="/articles/<%= article._id %>/edit">edit</a>
-  <form action="/articles/<%= article._id %>?_method=DELETE" method="post" class="delete-article">
-    <input type="submit" value="Delete this article">
-  </form>
 <% }) %>
